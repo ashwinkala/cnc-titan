@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titan</title>
+    <link rel='stylesheet' href='/css/materialize.css'/>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav class="blue-grey" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Titan</a>
+      <ul class="right hide-on-med-and-down">
+        {{#if user}}
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+        {{else}}
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/register">Register</a></li>
+        {{/if}}
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        {{#if user}}
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+        {{else}}
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/register">Register</a></li>
+        {{/if}}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+    <div class="container">
+      {{#if success_msg}}
+      <div class="card-panel z-depth-1">
+        <span class = "new badge green pulse" data-badge-caption="Success"></span>
+        {{success_msg}}
+      </div>
+      {{/if}}
+      {{#if error_msg}}
+      <div class="card-panel z-depth-1">
+        <span class = "new badge red pulse" data-badge-caption="Error"></span>      
+        {{error_msg}}
+      </div>
+      {{/if}}
+      {{#if error}}
+      <div class="card-panel z-depth-1">
+        <span class = "new badge red pulse" data-badge-caption="Error"></span>      
+        {{error}}
+      </div>
+      {{/if}}        
+    </div>
+    {{{ body }}}
+    <footer class="page-footer amber darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Deloitte Blockchain Canada</h5>
+          <p class="grey-text text-lighten-4">We are a team of consultants from Deloitte Canada redefining the asset tracking aspect of supply chains.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      {{!-- Made by <a class="amber-text text-lighten-3" href="https://www2.deloitte.com/ca/en.html">Deloitte</a><br/> --}}
+      Powered by <a class="amber-text text-lighten-3" href="https://solidity.readthedocs.io">Solidity</a>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src='/js/materialize.js'></script>
+    <script src='/js/init.js'></script>
+</body>
+</html>
