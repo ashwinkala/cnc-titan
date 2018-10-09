@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        build 'cncbuild'
+        sh 'npm start'
       }
     }
   }
